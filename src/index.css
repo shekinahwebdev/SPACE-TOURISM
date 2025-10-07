@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@theme {
+  --color-clr-cinder: hsl(230, 35%, 7%);
+  --color-clr-fog: hsl(231, 77%, 90%);
+  --color-clr-white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+@layer components {
+  button {
+    @apply border-0 cursor-pointer;
+  }
+
+  ul {
+    @apply list-none cursor-pointer;
+  }
+  li {
+    @apply uppercase;
+  }
+}
+
+@media (width >= 80rem) {
+  .desktop-header {
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 1rem 0rem;
+    margin: 2rem 0rem;
+  }
+}
