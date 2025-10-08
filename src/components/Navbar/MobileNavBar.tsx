@@ -3,7 +3,19 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 
-const MobileNavBar = ({ onClosed }: { onClosed: () => void }) => {
+interface MobileNavBarProps {
+  onClosed: () => void;
+  activePage: string;
+}
+
+const MobileNavBar = ({ onClosed, activePage }: MobileNavBarProps) => {
+  const links = [
+    { path: "/", number: "00", label: "Home" },
+    { path: "/destination", number: " 01", label: "Destination" },
+    { path: "/crew", number: "02", label: "Crew" },
+    { path: "/technology", number: "03", label: "Technology" },
+  ];
+
   const navRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
     gsap.fromTo(
@@ -45,39 +57,24 @@ const MobileNavBar = ({ onClosed }: { onClosed: () => void }) => {
           />
         </button>
       </div>
-      <nav className="absolute top-60 flex text-xl justify-center items-center gap-10">
+      <nav className="absolute top-72 flex text-xl justify-center items-center">
         <ul>
-          <li className="pb-2 font-light">
-            <Link to="/">
-              <div className="relative inline-block group pb-3">
-                <span className="mr-4 font-extrabold">00</span> Home
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 bg-white group-hover:w-full"></span>
-              </div>
-            </Link>
-          </li>
-          <li className="mt-8  font-light">
-            <Link to="/destination">
-              <div className="relative inline-block group pb-3">
-                <span className="mr-4 font-extrabold">01</span> Destination
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 bg-white group-hover:w-full"></span>
-              </div>
-            </Link>
-          </li>
-          <li className="mt-8  font-light">
-            <Link to="/crew">
-              <div className="relative inline-block group pb-3">
-                <span className="mr-4 font-extrabold">02</span> Crew
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 bg-white group-hover:w-full"></span>
-              </div>
-            </Link>
-          </li>
-          <li className="mt-8  font-light">
-            <Link to="/technology">
-              <div className="relative inline-block group pb-3">
-                <span className="mr-4 font-extrabold">03</span> Technology
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] transition-all duration-300 bg-white group-hover:w-full"></span>
-              </div>
-            </Link>
+          <li className="pb-2 font-light flex flex-col gap-10 absolute">
+            {links.map((link) => (
+              <Link key={link.path} to={link.path}>
+                <div className="relative inline-block group pb-3">
+                  <span className="mr-4 font-extrabold">{link.number}</span>
+                  {link.label}
+                  <span
+                    className={`absolute left-0 bottom-0 w-0 h-[5px] transition-all duration-300 group-hover:bg-white/65 group-hover:w-full ${
+                      activePage == link.path
+                        ? "w-full bg-white"
+                        : "w-0 group-hover:w-full"
+                    }`}
+                  ></span>
+                </div>
+              </Link>
+            ))}
           </li>
         </ul>
       </nav>

@@ -2,11 +2,18 @@ import logo from "/assets/shared/logo.svg";
 import open from "/assets/shared/icon-hamburger.svg";
 import MobileNavBar from "../MobileNavBar";
 import DesktopNavBar from "../DesktopNavBar";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [activePage, setActivePage] = useState(location.pathname);
+
+  useEffect(() => {
+    setActivePage(location.pathname);
+  }, [location.pathname]);
+
   return (
     <>
       <header className="flex flex-row justify-between items-center w-full xl:mt-7">
@@ -20,8 +27,13 @@ const Header = () => {
           <img src={open} alt="Hamburger-icon" />
         </button>
       </header>
-      {isOpen && <MobileNavBar onClosed={() => setIsOpen(false)} />}
-      <DesktopNavBar />
+      {isOpen && (
+        <MobileNavBar
+          onClosed={() => setIsOpen(false)}
+          activePage={activePage}
+        />
+      )}
+      <DesktopNavBar activePage={activePage} />
     </>
   );
 };
