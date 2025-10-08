@@ -23,6 +23,39 @@ body {
   }
 }
 
+.space {
+  font-family: "Bellefair", serif;
+}
+
+.btn-explore {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+}
+
+.btn-explore::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  scale: 1;
+  transition: all 0.75s ease-in-out;
+}
+
+.btn-explore:hover::before {
+  opacity: 1;
+  scale: 1.5;
+}
+
+.btn-explore:focus-visible {
+  outline: 3px solid var(--color-clr-fog);
+  outline-offset: 3px;
+}
+
 @media (width >= 80rem) {
   .desktop-header {
     max-width: 900px;
@@ -31,5 +64,27 @@ body {
     align-items: center;
     padding: 0rem 1rem 0rem;
     margin: 2rem 0rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8rem;
+  }
+
+  .top-content {
+    display: flex;
+    align-items: self-start;
+    width: 35%;
+  }
+
+  .des {
+    letter-spacing: 1px;
+    line-height: 2rem;
+  }
+  .space {
+    font-size: 10rem;
   }
 }

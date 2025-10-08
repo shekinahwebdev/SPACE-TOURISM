@@ -1,11 +1,18 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/Navbar/ui/Header";
-
+import Header from "./components/Navbar/layout/Header";
+import { usePageBackground } from "./hooks/usePageBackground";
 const App = () => {
+  const bgImage = usePageBackground();
   return (
-    <div>
-      <Outlet />
-    </div>
+    <section
+      className="p-6 h-screen bg-cover bg-center flex flex-col w-full"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+    </section>
   );
 };
 
