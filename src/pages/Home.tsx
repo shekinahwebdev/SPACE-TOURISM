@@ -4,7 +4,7 @@ export const Home = () => {
   const navigate = useNavigate();
   return (
     <section>
-      <div className="border-white my-20 flex flex-col items-center gap-5 h-full text-center text-white md:my-24 content xl:px-32">
+      <div className="my-20 flex flex-col items-center gap-5 h-full text-center text-white md:my-24 content xl:px-32">
         <div className="flex flex-col gap-2.5 items-center w-full top-content">
           <h1 className="text-3xl uppercase text-clr-fog text-center xl:text-4xl">
             So, you want to travel to
@@ -20,7 +20,7 @@ export const Home = () => {
           </p>
         </div>
         <button
-          onClick={() => navigate("/destination")}
+          onClick={() => navigate("/destination/moon")}
           className="bg-clr-white text-clr-cinder w-[250px] h-[250px] rounded-full text-4xl md:text-5xl uppercase mt-28 md:w-[300px] md:h-[300px] btn-explore"
         >
           Explore

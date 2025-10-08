@@ -11,7 +11,7 @@ interface MobileNavBarProps {
 const MobileNavBar = ({ onClosed, activePage }: MobileNavBarProps) => {
   const links = [
     { path: "/", number: "00", label: "Home" },
-    { path: "/destination", number: " 01", label: "Destination" },
+    { path: "/destination/:planet", number: " 01", label: "Destination" },
     { path: "/crew", number: "02", label: "Crew" },
     { path: "/technology", number: "03", label: "Technology" },
   ];

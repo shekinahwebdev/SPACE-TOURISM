@@ -4,10 +4,16 @@
   --color-clr-cinder: hsl(230, 35%, 7%);
   --color-clr-fog: hsl(231, 77%, 90%);
   --color-clr-white: hsl(0, 0%, 100%);
+  --font-display: "Bellefair", serif;
 }
 
 body {
   font-family: "Barlow Condensed", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  background-color: black;
 }
 
 @layer components {
@@ -21,6 +27,14 @@ body {
   li {
     @apply uppercase;
   }
+}
+
+.text {
+  @apply uppercase text-2xl text-clr-fog;
+}
+
+.text-info {
+  @apply uppercase text-4xl font-display;
 }
 
 .space {
@@ -86,5 +100,14 @@ body {
   }
   .space {
     font-size: 10rem;
+  }
+
+  .destination-content {
+    display: flex;
+    align-items: self-start;
+  }
+
+  .destination-main {
+    display: flex;
   }
 }

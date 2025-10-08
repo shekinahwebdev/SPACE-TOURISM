@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-interface DesktopNavBarProps {
-  activePage: string;
-}
+const DesktopNavBar = () => {
+  const location = useLocation();
 
-const DesktopNavBar = ({ activePage }: DesktopNavBarProps) => {
   const links = [
     { path: "/", number: "00", label: "Home" },
-    { path: "/destination", number: " 01", label: "Destination" },
+    { path: "/destination", number: "01", label: "Destination" },
     { path: "/crew", number: "02", label: "Crew" },
     { path: "/technology", number: "03", label: "Technology" },
   ];
@@ -17,21 +15,25 @@ const DesktopNavBar = ({ activePage }: DesktopNavBarProps) => {
       <nav className="w-full text-xl gap-10">
         <ul className="flex flex-row justify-between items-center w-full xl:justify-center xl:gap-20">
           <li className="pb-2 sm:pb-0 mt-8 font-light md:text-xl md:-tracking-tighter md:gap-9 md:flex">
-            {links.map((link) => (
-              <Link key={link.path} to={link.path}>
-                <div className="relative inline-block group pb-3 md:pb-8">
-                  <span className="mr-4 font-extrabold">{link.number}</span>
-                  {link.label}
-                  <span
-                    className={`absolute left-0 bottom-0 w-0 h-[5px] transition-all duration-300 group-hover:bg-white/65 group-hover:w-full ${
-                      activePage == link.path
-                        ? "w-full bg-white"
-                        : "w-0 group-hover:w-full"
-                    }`}
-                  ></span>
-                </div>
-              </Link>
-            ))}
+            {links.map((link) => {
+              const isActive =
+                location.pathname === link.path ||
+                location.pathname.startsWith(link.path + "/");
+
+              return (
+                <Link key={link.path} to={link.path}>
+                  <div className="relative inline-block group pb-3 md:pb-8">
+                    <span className="mr-4 font-extrabold">{link.number}</span>
+                    {link.label}
+                    <span
+                      className={`absolute left-0 bottom-0 h-[5px] transition-all duration-300 group-hover:bg-white/65 ${
+                        isActive ? "w-full bg-white" : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                  </div>
+                </Link>
+              );
+            })}
           </li>
         </ul>
       </nav>
