@@ -21,7 +21,12 @@ const RootLayout = createBrowserRouter([
         element: <Navigate to="/crew/douglas hurley" replace />,
       },
       { path: "/crew/:crewId", element: <Crew /> },
-      { path: "/technology", element: <Technology /> },
+
+      { path: "/technology/:techId", element: <Technology /> },
+      {
+        path: "/technology",
+        element: <Navigate to="/technology/launch vehicle" replace />,
+      },
     ],
   },
 ]);

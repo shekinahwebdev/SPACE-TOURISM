@@ -94,10 +94,6 @@ body {
     width: 35%;
   }
 
-  .des {
-    letter-spacing: 1px;
-    line-height: 2rem;
-  }
   .space {
     font-size: 10rem;
   }
@@ -109,5 +105,11 @@ body {
 
   .destination-main {
     display: flex;
+  }
+
+  .launch {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
   }
 }

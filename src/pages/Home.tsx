@@ -57,7 +57,7 @@ export const Home = () => {
         </div>
         <button
           onClick={() => navigate("/destination/moon")}
-          className="bg-clr-white text-clr-cinder w-[250px] h-[250px] rounded-full text-4xl md:text-5xl uppercase mt-28 md:w-[300px] md:h-[300px] btn-explore"
+          className="bg-clr-white text-clr-cinder w-[250px] h-[250px] rounded-full text-4xl md:text-5xl uppercase mt-28 md:w-[300px] md:h-[300px] xl:w-[400px] xl:h-[400px] btn-explore"
         >
           Explore
         </button>
