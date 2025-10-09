@@ -45,7 +45,7 @@ export const data = {
       travel: "7 years",
     },
   ],
-  crew: [
+  crews: [
     {
       name: "Douglas Hurley",
       images: {
