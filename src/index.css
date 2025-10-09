@@ -20,6 +20,13 @@ body {
   background-color: black;
 }
 
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  box-sizing: border-box;
+}
+
 @layer components {
   button {
     @apply border-0 cursor-pointer;
@@ -89,7 +96,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 8rem;
   }
 
   .top-content {
@@ -99,7 +105,7 @@ body {
   }
 
   .space {
-    font-size: 10rem;
+    font-size: 8rem;
   }
 
   .destination-content {

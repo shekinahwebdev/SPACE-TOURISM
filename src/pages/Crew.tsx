@@ -91,7 +91,7 @@ const Crew = () => {
             })}
           </div>
         </div>
-        <div className="mt-7 xl:mt-[-120px]">
+        <div className="mt-7 xl:mt-[-100px]">
           <img
             src={crew.images.png}
             alt="Crew Members"

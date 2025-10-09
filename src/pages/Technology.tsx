@@ -61,12 +61,12 @@ const Technology = () => {
           Space launch 101
         </span>
       </p>
-      <div className="flex flex-col xl:gap-20 w-full items-center justify-center mt-3.5 destination-main xl:inline-flex xl:flex-row-reverse xl:justify-start xl:text-left">
-        <div className="xl:mt-[-120px]">
+      <div className="flex flex-col xl:gap-10 w-full items-center justify-center mt-3.5 destination-main xl:inline-flex xl:flex-row-reverse xl:justify-start xl:text-left">
+        <div className="xl:mt-[-50px]">
           <img
             src={tech.images.portrait}
             alt="Technology image"
-            className="w-[400px] sm:w-[900px] h-[400px] xl:w-[1800px] xl:h-[600px] tech-image"
+            className="w-[400px] sm:w-[900px] h-[400px] xl:w-[1800px] xl:h-[470px] tech-image"
           />
         </div>
         <div className="launch flex flex-col items-center">
@@ -101,11 +101,11 @@ const Technology = () => {
               );
             })}
           </div>
-          <div className="mt-10 pl-7">
-            <p className="text-white/25  uppercase text-2xl md:text-3xl xl:text-5xl font-display xl:mb-4 role">
+          <div className="mt-10 pl-2">
+            <p className="text-white/25  uppercase text-2xl md:text-3xl xl:text-4xl font-display xl:mb-4 role">
               The terminology...
             </p>
-            <span className="text-clr-white uppercase text-4xl  md:text-5xl mb-3 xl:mb-0 xl:my-3 xl:text-6xl font-display tech-name">
+            <span className="text-clr-white uppercase text-4xl  md:text-5xl mb-3 xl:mb-0 xl:my-3 xl:text-5xl font-display tech-name">
               {tech.name}
             </span>
             <p className="text-clr-fog text-[1.2rem] mt-6 xl:mt-5 px-7 md:px-40 xl:px-0 xl:text-xl tech-desc">

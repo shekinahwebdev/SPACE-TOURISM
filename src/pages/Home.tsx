@@ -39,8 +39,8 @@ export const Home = () => {
 
   const navigate = useNavigate();
   return (
-    <section>
-      <div className="my-20 flex flex-col items-center gap-5 h-full text-center text-white md:my-24 content xl:px-32">
+    <section className="flex">
+      <div className="flex flex-col items-center justify-center gap-5 h-full text-center text-white md:my-24 content xl:px-32 xl:py-0">
         <div className="flex flex-col gap-2.5 items-center w-full top-content">
           <h1 className="text-3xl uppercase text-clr-fog text-center xl:text-4xl travel-text">
             So, you want to travel to
@@ -57,7 +57,7 @@ export const Home = () => {
         </div>
         <button
           onClick={() => navigate("/destination/moon")}
-          className="bg-clr-white text-clr-cinder w-[250px] h-[250px] rounded-full text-4xl md:text-5xl uppercase mt-28 md:w-[300px] md:h-[300px] xl:w-[400px] xl:h-[400px] btn-explore"
+          className="bg-clr-white text-clr-cinder w-[190px] h-[190px] rounded-full text-4xl md:text-5xl uppercase mt-28 xl:mt-20 md:w-[300px] md:h-[300px] btn-explore"
         >
           Explore
         </button>

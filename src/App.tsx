@@ -5,7 +5,7 @@ const App = () => {
   const bgImage = usePageBackground();
   return (
     <section
-      className="p-6 h-screen bg-cover bg-center flex flex-col w-full"
+      className="p-6 min-h-screen bg-cover bg-no-repeat bg-center flex flex-col w-full"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <Header />
