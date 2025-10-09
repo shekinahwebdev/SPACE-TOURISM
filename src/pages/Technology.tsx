@@ -54,14 +54,14 @@ const Technology = () => {
   }, [tech.name]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-5 h-full text-center text-white md:mt-9 xl:mt-20 destination-content xl:px-40">
+    <div className="flex flex-col items-center justify-center gap-5 h-full text-center my-24 text-white md:mt-9 xl:mt-20 destination-content xl:px-40">
       <p className="text-white/25 font-bold text-2xl uppercase xl:text-4xl">
         03
         <span className="ml-3 text-3xl text-clr-fog font-thin xl:text-4xl">
           Space launch 101
         </span>
       </p>
-      <div className="flex flex-col xl:gap-10 w-full items-center justify-center mt-3.5 destination-main xl:inline-flex xl:flex-row-reverse xl:justify-start xl:text-left">
+      <div className="flex flex-col xl:gap-10 w-full items-center justify-center mt-3.5 destination-main my-24 xl:inline-flex xl:flex-row-reverse xl:justify-start xl:text-left">
         <div className="xl:mt-[-50px]">
           <img
             src={tech.images.portrait}
