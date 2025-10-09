@@ -54,7 +54,7 @@ const Crew = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-5 h-full text-center text-white md:mt-9 xl:mt-20 destination-content xl:px-52">
-      <p className="text-white/15 font-bold text-2xl uppercase xl:text-4xl">
+      <p className="text-white/25 font-bold text-2xl uppercase xl:text-4xl">
         02
         <span className="ml-3 text-3xl text-clr-fog font-thin xl:text-4xl">
           Meet your crew
@@ -62,7 +62,7 @@ const Crew = () => {
       </p>
       <div className="flex flex-col xl:gap-28 w-full items-center justify-center mt-6 destination-main xl:inline-flex xl:flex-row xl:justify-start xl:text-left">
         <div className="">
-          <h2 className="text-white/15 font-bold text-2xl uppercase font-display xl:text-4xl role">
+          <h2 className="text-white/25 font-bold text-2xl uppercase font-display xl:text-4xl role">
             {crew.role}
           </h2>
           <p className="text-clr-white uppercase text-4xl font-display xl:text-5xl xl:pt-3 crew-name">

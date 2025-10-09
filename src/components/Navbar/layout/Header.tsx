@@ -2,17 +2,11 @@ import logo from "/assets/shared/logo.svg";
 import open from "/assets/shared/icon-hamburger.svg";
 import MobileNavBar from "../MobileNavBar";
 import DesktopNavBar from "../DesktopNavBar";
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-  const [activePage, setActivePage] = useState(location.pathname);
-
-  useEffect(() => {
-    setActivePage(location.pathname);
-  }, [location.pathname]);
 
   return (
     <>
@@ -27,13 +21,8 @@ const Header = () => {
           <img src={open} alt="Hamburger-icon" />
         </button>
       </header>
-      {isOpen && (
-        <MobileNavBar
-          onClosed={() => setIsOpen(false)}
-          activePage={activePage}
-        />
-      )}
-      <DesktopNavBar activePage={activePage} />
+      {isOpen && <MobileNavBar onClosed={() => setIsOpen(false)} />}
+      <DesktopNavBar />
     </>
   );
 };
