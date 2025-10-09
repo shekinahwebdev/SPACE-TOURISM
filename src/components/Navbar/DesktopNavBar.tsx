@@ -1,7 +1,26 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { Link, useLocation } from "react-router-dom";
 
 const DesktopNavBar = () => {
   const location = useLocation();
+
+  useGSAP(() => {
+    gsap.fromTo(
+      ".desktop-header",
+      {
+        x: 900,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        ease: "power4.inOut",
+        duration: 1.8,
+        delay: 0.2,
+      }
+    );
+  });
 
   const links = [
     { path: "/", number: "00", label: "Home" },

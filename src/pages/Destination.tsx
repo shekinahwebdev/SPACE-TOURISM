@@ -43,7 +43,6 @@ const Destination = () => {
   }, [destination.name]);
 
   return (
-    // <section className="border-2">
     <div className="flex flex-col items-center justify-center gap-5 h-full text-center text-white md:mt-9 xl:mt-20 destination-content xl:px-52">
       <p className="text-white/15 font-bold text-2xl uppercase xl:text-4xl">
         01
@@ -107,7 +106,6 @@ const Destination = () => {
         </div>
       </div>
     </div>
-    // </section>
   );
 };
 
