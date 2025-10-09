@@ -40,7 +40,7 @@ export const Home = () => {
   const navigate = useNavigate();
   return (
     <section className="flex">
-      <div className="flex flex-col items-center justify-center gap-5 h-full text-center text-white md:my-24 content xl:px-32 xl:py-0">
+      <div className="flex flex-col items-center justify-center gap-5 h-full text-center text-white my-24 content xl:px-32 xl:py-0">
         <div className="flex flex-col gap-2.5 items-center w-full top-content">
           <h1 className="text-3xl uppercase text-clr-fog text-center xl:text-4xl travel-text">
             So, you want to travel to
